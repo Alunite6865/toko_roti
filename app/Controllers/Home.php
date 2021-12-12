@@ -46,6 +46,7 @@ class Home extends BaseController
             'price' => $this->request->getPost('price'),
             'name' => $this->request->getPost('name'),
             'options' => array(
+                'berat' => $this->request->getPost('berat'),
                 'gambar' => $this->request->getPost('gambar'),
             )
         ));

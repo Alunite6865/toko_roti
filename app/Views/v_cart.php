@@ -31,6 +31,8 @@
                             <tr>
                                 <th width="100px">Qty</th>
                                 <th>Nama Barang</th>
+                                <th>Berat (gr)</th>
+                                <th>Total Berat (gr)</th>
                                 <th>Harga</th>
                                 <th>Total</th>
                                 <th></th>
@@ -39,13 +41,17 @@
                         <tbody>
                             <?php
                             $tot_jumlah = 0;
+                            $tot_berat = 0;
                             $i = 1;
                             foreach ($cart->contents() as $key => $value) {
                                 $tot_jumlah = $tot_jumlah + $value['qty'];
+                                $tot_berat = $tot_berat + $value['options']['berat'] * $value['qty'];
                             ?>
                                 <tr>
                                     <td><input type="number" min="1" name="qty<?= $i++; ?>" class="form-control" value="<?= $value['qty'] ?>"></td>
                                     <td><?= $value['name'] ?></td>
+                                    <td><?= $value['options']['berat'] ?></td>
+                                    <td><?= $value['qty'] * $value['options']['berat'] ?></td>
                                     <td><?= number_to_currency($value['price'], 'IDR') ?>,-</td>
                                     <td><?= number_to_currency($value['subtotal'], 'IDR'); ?>,-</td>
                                     <td>
@@ -79,6 +85,10 @@
                             <tr>
                                 <th>Total Jumlah</th>
                                 <td><?= $tot_jumlah ?></td>
+                            </tr>
+                            <tr>
+                                <th>Total Berat</th>
+                                <td><?= $tot_berat ?> gram</td>
                             </tr>
                             <tr>
                                 <th>Total</th>

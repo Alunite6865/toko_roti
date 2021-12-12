@@ -17,7 +17,7 @@
                       <a href="<?= base_url('home'); ?>" class="nav-link">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a href="#" class="nav-link">Contact</a>
+                      <a href="#" class="nav-link">Contact Us</a>
                   </li>
               </ul>
           </div>
@@ -60,9 +60,8 @@
                               <!-- Message End -->
                           </a>
                           <div class="dropdown-divider"></div>
-                          <a href="#" class="dropdown-item dropdown-footer">Subtotal : <?= number_to_currency($cart->total(), 'IDR'); ?>,-</a>
+                          <a class="dropdown-item">Subtotal : <?= number_to_currency($cart->total(), 'IDR'); ?>,-</a>
                           <a href="<?= base_url('home/cart'); ?>" class="dropdown-item dropdown-footer">View Cart</a>
-                          <a href="#" class="dropdown-item dropdown-footer">Checkout</a>
                       <?php } ?>
                   </div>
               </li>
@@ -82,9 +81,8 @@
                   </div><!-- /.col -->
                   <div class="col-sm-6">
                       <ol class="breadcrumb float-sm-right">
-                          <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                          <li class="breadcrumb-item active">Top Navigation</li>
+                          <li class="breadcrumb-item active"><a href="<?= base_url('home'); ?>">Home</a></li>
+                          <li class="breadcrumb-item"><a href="<?= base_url('home/cart'); ?>">Cart</a></li>
                       </ol>
                   </div><!-- /.col -->
               </div><!-- /.row -->

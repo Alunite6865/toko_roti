@@ -22,6 +22,7 @@
                     echo form_hidden('name', $value['nama_barang']);
                     echo form_hidden('desc', $value['deskripsi']);
                     // echo form_hidden('qty', $value['stok']);
+                    echo form_hidden('berat', $value['berat']);
                     echo form_hidden('gambar', $value['gambar']);
                     ?>
                     <div class="card">
@@ -32,7 +33,8 @@
                                 <img src="<?= base_url('gambar/' . $value['gambar']) ?>" width="200px" height="150px">
                             </p>
 
-                            <label><?= number_to_currency($value['harga'], 'IDR'); ?>,-</label><br>
+                            <label><?= number_to_currency($value['harga'], 'IDR'); ?>,-</label><br><br>
+                            <p class="card-text">Berat : <?= $value['berat'] ?> gr</p>
                             <p class="card-text">Stok : <?= $value['stok'] ?></p>
                             <button type="submit" class="btn btn-success btn-sm"><i class="fa fa-shopping-basket"></i> Add</button>
                         </div>
